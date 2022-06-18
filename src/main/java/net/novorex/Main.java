@@ -15,7 +15,6 @@ public class Main extends JavaPlugin {
 
     public static Main instance;
 
-    public static final Random RANDOM = new Random();
 
     @Override
     public void onEnable() {
@@ -26,7 +25,7 @@ public class Main extends JavaPlugin {
 
         PluginManager pluginManager = Bukkit.getPluginManager();
         pluginManager.registerEvents(new PlayerJoinListener(), this);
-        //pluginManager.registerEvents(new PlayerMotdListener(), this);
+        pluginManager.registerEvents(new PlayerMotdListener(), this);
         pluginManager.registerEvents(new ExplosionListener(), this);
         pluginManager.registerEvents(new PlayerLeaveListener(), this);
 
@@ -63,12 +62,6 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        for (Player player : Bukkit.getOnlinePlayers()) {
-            PlayerQuitEvent playerQuitEvent = new PlayerQuitEvent(player, (String) null);
-            Bukkit.getPluginManager().callEvent(playerQuitEvent);
-            player.kickPlayer("Server Plugin Update! Please rejoin!");
-        }
-
         super.onDisable();
     }
 }

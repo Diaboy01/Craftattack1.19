@@ -37,15 +37,17 @@ public class PlayerJoinListener implements Listener {
 
         if (player.hasPlayedBefore()) {
             //NORMAL JOIN
+            Bukkit.getScheduler().runTaskLater(Main.instance, () -> Bukkit.dispatchCommand(console, "team add -"), 10L * 10);
+            Bukkit.getScheduler().runTaskLater(Main.instance, () -> Bukkit.dispatchCommand(console, "team join - " + playerName), 20L * 10);
+            Bukkit.getScheduler().runTaskLater(Main.instance, () -> Bukkit.dispatchCommand(console, "team modify - nametagVisibility hideForOwnTeam"), 30L * 10);
         } else {
             //FIRST JOIN
             World world = player.getWorld();
             world.setDifficulty(Difficulty.NORMAL);
-            player.teleport(new Location(world, 430, 200, -600));
             player.teleport(Objects.requireNonNull(Bukkit.getWorld("world")).getSpawnLocation());
-            Bukkit.dispatchCommand(console, "scoreboard teams join - " + playerName);
+            player.teleport(new Location(world, 450, 200, -600));
+            Bukkit.dispatchCommand(console, "team join - " + playerName);
             player.sendTitle("CRAFTATTACK 1.19", "Willkommen " + playerName + "!", 20, 120, 20);
-            Bukkit.getScheduler().runTaskLater(Main.instance, () -> Bukkit.dispatchCommand(console, "kit give starter " + playerName), 20L * 10);
 
         }
 

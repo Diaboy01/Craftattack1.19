@@ -9,6 +9,6 @@ public class PlayerMotdListener implements Listener {
     @EventHandler
     public void onServerPing(ServerListPingEvent event) {
         event.setMaxPlayers(100);
-        event.setMotd("§fMinecraft §a§lCRAFTATTACK 1.19 \n§6by Novorex.net / §6§oSponsor: Nitrado.net");
+        event.setMotd("Minecraft §a§lCRAFTATTACK 1.19 \n§6by Novorex.net / §6§oSponsor: Nitrado.net");
     }
 }

@@ -1,6 +1,6 @@
 package net.novorex;
 
-import net.novorex.command.*;
+//import net.novorex.command.*;
 import net.novorex.listener.*;
 import org.bukkit.*;
 import org.bukkit.entity.Player;

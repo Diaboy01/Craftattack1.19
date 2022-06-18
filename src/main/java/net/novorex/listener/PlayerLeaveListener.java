@@ -10,7 +10,5 @@ public class PlayerLeaveListener implements Listener{
     public void onPlayerQuit(PlayerQuitEvent event) {
         Player player = event.getPlayer();
         event.setQuitMessage("§fServer §8➝ §7 [-] " + player.getName());
-
-
     }
 }

@@ -54,10 +54,6 @@ public class Main extends JavaPlugin {
         world.setSpawnLocation(0, 66, 0);
         */
 
-        for (Player player : Bukkit.getOnlinePlayers()) {
-            PlayerJoinEvent playerJoinEvent = new PlayerJoinEvent(player, (String) null);
-            Bukkit.getPluginManager().callEvent(playerJoinEvent);
-        }
     }
 
     @Override
